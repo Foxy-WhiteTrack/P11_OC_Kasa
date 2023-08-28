@@ -1,12 +1,20 @@
 import "./Nav.css";
 import React from "react";
+import { Link } from 'react-router-dom';
+import logo from '../../assets/logo.png';
 
-function template() {
+export default function Header() {
   return (
-    <div className="nav">
-      <h1>Nav</h1>
-    </div>
-  );
-};
-
-export default template;
+    <>
+      <div className="header">
+        <Link to="/">
+          <img src={logo} alt="Logo" />
+        </Link>
+        <nav className="nav">
+          <Link to="/" className="Link">Accueil</Link>
+          <Link to="/apropos" className="Link">A Propos</Link>
+        </nav>
+      </div>
+    </>
+  )
+}

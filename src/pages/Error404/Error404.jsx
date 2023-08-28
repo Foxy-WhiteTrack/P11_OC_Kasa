@@ -1,12 +1,8 @@
-import "./Error404.css";
-import React from "react";
-
-function template() {
+export default function Error404() {
   return (
-    <div className="error-404">
-      <h1>Error404</h1>
-    </div>
-  );
-};
-
-export default template;
+    <>
+      <h1>Page d'erreur</h1>
+      <p>This is the ErrorPage.</p>
+    </>
+  )
+}

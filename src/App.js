@@ -1,20 +1,34 @@
 import React from 'react';
-import Routes from './Routes';
-
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import { BrowserRouter, Route, Routes, Outlet } from 'react-router-dom';
+import Home from './pages/Home';
+import Error404 from './pages/Error404';
+import About from './pages/About/About';
+import HousingSheet from './pages/HousingSheet/HousingSheet';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <main>
-        <Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="housing/:id" element={<HousingSheet />} />
+          <Route path="about" element={<About />} />
+          <Route path="*" element={<Error404 />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
-        </Routes>
-      </main>
+function Layout() {
+  return (
+    <>
+      <Header />
+      <Outlet />
       <Footer />
-    </div>
+    </>
   );
 }
 

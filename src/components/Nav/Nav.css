@@ -1,0 +1,21 @@
+a {
+    color: #FF6060;
+}
+
+.header {
+    margin: 20px;
+}
+
+.header-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header img {}
+
+.nav {
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}

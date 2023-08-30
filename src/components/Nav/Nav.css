@@ -11,11 +11,17 @@ a {
     justify-content: space-between;
 }
 
-.header img {}
-
 .nav {
     width: 30%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.active {
+    text-decoration: underline;
 }

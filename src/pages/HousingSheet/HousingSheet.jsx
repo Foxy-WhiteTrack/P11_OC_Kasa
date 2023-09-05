@@ -7,6 +7,9 @@ import Tags from '../../components/Tag/Tag';
 import Collapse from '../../components/Collapse/Collapse';
 import './HousingSheet.css';
 
+import { FaStar, FaRegStar } from 'react-icons/fa';
+
+
 
 export default function HousingSheet() {
   const { id } = useParams();
@@ -16,6 +19,21 @@ export default function HousingSheet() {
   if (!housing) {
     return <p>Logement introuvable</p>;
   }
+
+  const hostName = housing.host.name;
+  const hostAvatar = housing.host.picture;
+
+  const rating = housing.rating;
+
+  const generateStars = (rating) => {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+      const StarIcon = i <= rating ? FaStar : FaRegStar;
+      const starColor = i <= rating ? '#FF6060' : '#E3E3E3';
+      stars.push(<StarIcon key={i} style={{ color: starColor }} />);
+    }
+    return stars;
+  };
 
   return (
     <div className="housing-sheet">
@@ -34,6 +52,16 @@ export default function HousingSheet() {
         {housing.tags.map((tags, index) => (
           <Tags key={index} text={tags} />
         ))}
+      </div>
+
+      {/* Propriétaire */}
+      <div className='host'>
+        <h2>{hostName}</h2>
+        <img src={hostAvatar} alt={`Avatar de ${hostName}`} />
+      </div>
+      {/* Rating */}
+      <div className="rating">
+        {generateStars(rating)}
       </div>
 
       {/* Description */}
@@ -59,6 +87,8 @@ export default function HousingSheet() {
           ]}
         />
       </div>
+
+
 
 
     </div>

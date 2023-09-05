@@ -1,12 +1,11 @@
-import "./Cards.css";
-import React from "react";
+import React from 'react';
+import './Cards.css';
 
-function template() {
+export default function Card({ title, cover, description }) {
   return (
-    <div className="cards">
-      <h1>Cards</h1>
+    <div className="card">
+      <img src={cover} alt={title} />
+      <h3>{title}</h3>
     </div>
   );
-};
-
-export default template;
+}

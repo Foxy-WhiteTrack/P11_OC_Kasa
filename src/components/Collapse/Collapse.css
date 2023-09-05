@@ -43,3 +43,8 @@ span {
     font-size: 32px;
     font-weight: bold;
 }
+
+.chevron {
+    display: flex;
+    align-items: center;
+}

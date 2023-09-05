@@ -1,5 +1,7 @@
 import React from "react";
 import Collapse from "../../components/Collapse/Collapse";
+import Banner from '../../components/Banner/Banner';
+import bannerImage from '../../assets/ban-about.png';
 
 export default function About() {
   const text = [
@@ -27,6 +29,7 @@ export default function About() {
 
   return (
     <>
+      <Banner imageUrl={bannerImage} slogan="" />
       <Collapse items={text} />
     </>
   );

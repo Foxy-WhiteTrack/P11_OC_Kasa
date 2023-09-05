@@ -1,10 +1,10 @@
 import "./Tag.css";
 import React from "react";
 
-export default function Tag() {
+export default function Tag({ text }) {
   return (
-    <div className="tags">
-      <h1>Tag</h1>
+    <div className="tag">
+      {text}
     </div>
   );
 };

@@ -1,0 +1,26 @@
+/* Banner.css */
+
+.banner {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .banner img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .slogan {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 3vw;
+  }
+  

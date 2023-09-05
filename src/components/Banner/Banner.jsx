@@ -1,12 +1,11 @@
 import "./Banner.css";
 import React from "react";
 
-function template() {
+export default function Banner({ imageUrl, slogan }) {
   return (
     <div className="banner">
-      <h1>Banner</h1>
+      <img src={imageUrl} alt="Banner" />
+      <div className="slogan">{slogan}</div>
     </div>
   );
 };
-
-export default template;

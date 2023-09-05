@@ -37,56 +37,67 @@ export default function HousingSheet() {
 
   return (
     <div className="housing-sheet">
-
       {/* Carrousel d'images */}
       <Slideshow images={housing.pictures} />
+      <div className='header-housing'>
 
-      {/* Titre */}
-      <h1>{housing.title}</h1>
+        <div className='left-header'>
+          {/* Titre */}
+          <h1 className='red'>{housing.title}</h1>
 
-      {/* Emplacement */}
-      <p>{housing.location}</p>
+          {/* Emplacement */}
+          <p className='red'>{housing.location}</p>
 
-      {/* Tags */}
-      <div className="tags">
-        {housing.tags.map((tags, index) => (
-          <Tags key={index} text={tags} />
-        ))}
+          {/* Tags */}
+          <div className="tags">
+            {housing.tags.map((tags, index) => (
+              <Tags key={index} text={tags} />
+            ))}
+          </div>
+        </div>
+        <div className='right-header'>
+          {/* Propriétaire */}
+          <div className='host'>
+            <h2 className='red'>{hostName}</h2>
+            <img src={hostAvatar} alt={`Avatar de ${hostName}`} />
+          </div>
+          {/* Rating */}
+          <div className="rating">
+            {generateStars(rating)}
+          </div>
+        </div>
+      </div>
+      <div className='body-housing'>
+        {/* Description */}
+        <div className="description">
+          <Collapse
+            items={[
+              {
+                title: "Description",
+                paragraphe: housing.description,
+              },
+            ]}
+          />
+        </div>
+
+        {/* Equipements */}
+        <div className="equipements">
+          <Collapse
+            items={[
+              {
+                title: "Équipements",
+                paragraphe: housing.equipments.join(", "),
+              },
+            ]}
+          />
+        </div>
       </div>
 
-      {/* Propriétaire */}
-      <div className='host'>
-        <h2>{hostName}</h2>
-        <img src={hostAvatar} alt={`Avatar de ${hostName}`} />
-      </div>
-      {/* Rating */}
-      <div className="rating">
-        {generateStars(rating)}
-      </div>
 
-      {/* Description */}
-      <div className="description">
-        <Collapse
-          items={[
-            {
-              title: "Description",
-              paragraphe: housing.description,
-            },
-          ]}
-        />
-      </div>
 
-      {/* Equipements */}
-      <div className="equipements">
-        <Collapse
-          items={[
-            {
-              title: "Équipements",
-              paragraphe: housing.equipments.join(", "),
-            },
-          ]}
-        />
-      </div>
+
+
+
 
 
 

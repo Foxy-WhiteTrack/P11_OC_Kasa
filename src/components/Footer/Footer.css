@@ -7,4 +7,5 @@
     color: white;
     gap: 20px;
     padding: 20px 0;
+    width: 100% !important;
 }

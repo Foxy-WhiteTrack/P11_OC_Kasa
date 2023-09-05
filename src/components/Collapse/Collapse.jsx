@@ -2,13 +2,14 @@ import "./Collapse.css";
 import React, { useState } from "react";
 
 export default function Collapse({ items }) {
-  const [selected, setSelected] = useState(null);
+  const [openItems, setOpenItems] = useState([]);
 
   const toggle = (i) => {
-    if (selected === i) {
-      return setSelected(null);
+    if (openItems.includes(i)) {
+      setOpenItems(openItems.filter(itemIndex => itemIndex !== i));
+    } else {
+      setOpenItems([...openItems, i]);
     }
-    setSelected(i);
   };
 
   return (
@@ -18,9 +19,9 @@ export default function Collapse({ items }) {
           <div className="item" key={i}>
             <div className="title" onClick={() => toggle(i)}>
               <h2>{item.title}</h2>
-              <span>{selected === i ? "-" : "+"}</span>
+              <span>{openItems.includes(i) ? "-" : "+"}</span>
             </div>
-            <div className={selected === i ? "content show" : "content"}>
+            <div className={openItems.includes(i) ? "content show" : "content"}>
               {item.paragraphe}
             </div>
           </div>

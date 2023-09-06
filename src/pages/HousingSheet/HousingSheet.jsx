@@ -2,8 +2,8 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import jsonData from '../../datas/logements.json';
 
-import Slideshow from '../../components/Slideshow';
-import Tags from '../../components/Tag/Tag';
+import Slideshow from '../../components/Slideshow/Slideshow';
+import Tag from '../../components/Tag/Tag';
 import Collapse from '../../components/Collapse/Collapse';
 import './HousingSheet.css';
 
@@ -59,10 +59,10 @@ export default function HousingSheet() {
         </div>
         <div className='header-down'>
           <div className='header-down-right'>
-            {/* Tags */}
+            {/* Tag */}
             <div className="tags">
               {housing.tags.map((tags, index) => (
-                <Tags key={index} text={tags} />
+                <Tag key={index} text={tags} />
               ))}
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function HousingSheet() {
             items={[
               {
                 title: "Équipements",
-                paragraphe: housing.equipments.map((equipments, index) => (
+                paragraphe: housing.equipments.map((equipments) => (
                   <p>{equipments}</p>
                 ))
               },

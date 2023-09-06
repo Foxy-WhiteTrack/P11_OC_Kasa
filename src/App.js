@@ -1,8 +1,8 @@
 import React from 'react';
 import Layout from './components/Layout/Layout';
 import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import Error404 from './pages/Error404';
+import Home from './pages/Home/Home';
+import Error404 from './pages/Error404/Error404';
 import About from './pages/About/About';
 import HousingSheet from './pages/HousingSheet/HousingSheet';
 import "./App.css";

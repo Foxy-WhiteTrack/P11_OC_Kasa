@@ -3,7 +3,7 @@ import React from "react";
 import { NavLink } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 
-export default function Header() {
+export default function Nav() {
   return (
     <div className="header-body">
       <NavLink to="/">

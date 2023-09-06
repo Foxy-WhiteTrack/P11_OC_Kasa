@@ -2,7 +2,7 @@ import "./Footer.css";
 import React from "react";
 import logo from '../../assets/logo-footer.png';
 
-export default function template() {
+export default function Footer() {
   return (
     <div className="footer">
       <img src={logo} alt="logo" className='logo_footer' />

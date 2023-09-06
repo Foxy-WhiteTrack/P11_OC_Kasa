@@ -2,6 +2,7 @@ import React from "react";
 import Collapse from "../../components/Collapse/Collapse";
 import Banner from '../../components/Banner/Banner';
 import bannerImage from '../../assets/ban-about.png';
+import "./About.css";
 
 export default function About() {
   const text = [

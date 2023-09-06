@@ -31,7 +31,8 @@ export default function About() {
   return (
     <>
       <Banner imageUrl={bannerImage} slogan="" />
-      <Collapse items={text} />
+      <Collapse customClass="about-collapse" items={text} />
+
     </>
   );
 }

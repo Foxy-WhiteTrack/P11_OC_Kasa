@@ -77,7 +77,7 @@ export default function HousingSheet() {
       <div className='body-housing'>
         {/* Description */}
         <div className="description">
-          <Collapse
+          <Collapse customClass="housing-collapse"
             items={[
               {
                 title: "Description",
@@ -89,7 +89,7 @@ export default function HousingSheet() {
 
         {/* Equipements */}
         <div className="equipements">
-          <Collapse
+          <Collapse customClass="housing-collapse"
             items={[
               {
                 title: "Équipements",

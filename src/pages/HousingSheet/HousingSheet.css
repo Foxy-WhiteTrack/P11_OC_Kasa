@@ -70,3 +70,7 @@
     justify-content: space-evenly;
     font-size: 35px;
 }
+
+.housing-collapse .content.show {
+    height: 249px;
+}

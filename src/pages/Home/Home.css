@@ -1,9 +1,10 @@
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Trois éléments par ligne */
-    gap: 40px;
-    margin: 0 20px 40px 20px;
-    background-color: #F6F6F6;
-    border-radius:  25px;
-    padding: 30px 40px;
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Trois éléments par ligne */
+  gap: 40px;
+  margin: 0 20px 40px 20px;
+  background-color: #F6F6F6;
+  border-radius: 25px;
+  padding: 30px 40px;
+}

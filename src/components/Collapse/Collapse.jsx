@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 
-export default function Collapse({ items }) {
+export default function Collapse({ items, customClass }) {
   const [openItems, setOpenItems] = useState([]);
 
   const toggle = (i) => {
@@ -15,7 +15,7 @@ export default function Collapse({ items }) {
   };
 
   return (
-    <div className="wrapper">
+    <div className={`wrapper ${customClass}`}>
       <div className="accordion">
         {items.map((item, i) => (
           <div className="item" key={i}>

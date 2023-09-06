@@ -1,8 +1,7 @@
 .slideshow {
     position: relative;
-    height: 0;
     padding-bottom: calc(415 / 1440 * 100vw);
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 100%;
 
 }
@@ -20,7 +19,7 @@
 
 .slideshow img {
     width: 100%;
-    height: auto;
+    height: calc(415 / 1440 * 100vw);
     object-fit: cover;
     border-radius: 25px;
 }

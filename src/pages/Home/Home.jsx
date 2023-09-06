@@ -12,11 +12,12 @@ export default function Home() {
       <Banner imageUrl={bannerImage} slogan="Chez vous, partout et ailleurs" />
       <div className="grid-container">
         {jsonData.map((item) => (
-          <Link to={`/housing/${item.id}`} key={item.id}> {/* Entoure chaque Card avec le composant Link */}
+          <Link to={`/housing/${item.id}`} key={item.id}> {
             <Card
               title={item.title}
               cover={item.cover}
             />
+          }
           </Link>
         ))}
       </div>

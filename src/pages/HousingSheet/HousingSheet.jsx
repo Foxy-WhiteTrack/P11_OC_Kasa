@@ -41,29 +41,36 @@ export default function HousingSheet() {
       <Slideshow images={housing.pictures} />
       <div className='header-housing'>
 
-        <div className='left-header'>
-          {/* Titre */}
-          <h1 className='red'>{housing.title}</h1>
+        <div className='header-up'>
+          <div className='header-up-left'>
+            {/* Titre */}
+            <h1 className='red'>{housing.title}</h1>
 
-          {/* Emplacement */}
-          <p className='red'>{housing.location}</p>
-
-          {/* Tags */}
-          <div className="tags">
-            {housing.tags.map((tags, index) => (
-              <Tags key={index} text={tags} />
-            ))}
+            {/* Emplacement */}
+            <p className='red'>{housing.location}</p>
+          </div>
+          <div className='header-up-right'>
+            {/* Propriétaire */}
+            <div className='host'>
+              <h2 className='red'>{hostName}</h2>
+              <img src={hostAvatar} alt={`Avatar de ${hostName}`} />
+            </div>
           </div>
         </div>
-        <div className='right-header'>
-          {/* Propriétaire */}
-          <div className='host'>
-            <h2 className='red'>{hostName}</h2>
-            <img src={hostAvatar} alt={`Avatar de ${hostName}`} />
+        <div className='header-down'>
+          <div className='header-down-right'>
+            {/* Tags */}
+            <div className="tags">
+              {housing.tags.map((tags, index) => (
+                <Tags key={index} text={tags} />
+              ))}
+            </div>
           </div>
-          {/* Rating */}
-          <div className="rating">
-            {generateStars(rating)}
+          <div className='header-down-left'>
+            {/* Rating */}
+            <div className="rating">
+              {generateStars(rating)}
+            </div>
           </div>
         </div>
       </div>
@@ -86,7 +93,9 @@ export default function HousingSheet() {
             items={[
               {
                 title: "Équipements",
-                paragraphe: housing.equipments.join(", "),
+                paragraphe: housing.equipments.map((equipments, index) => (
+                  <p>{equipments}</p>
+                ))
               },
             ]}
           />

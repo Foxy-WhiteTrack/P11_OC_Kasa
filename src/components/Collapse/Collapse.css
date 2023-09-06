@@ -13,6 +13,7 @@
     margin-bottom: 5px;
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
 }
 
 .title {
@@ -24,6 +25,8 @@
     justify-content: space-evenly;
     gap: 70%;
     align-items: center;
+    border-radius: 10px;
+    padding: 0 10px;
 
 }
 
@@ -31,12 +34,14 @@
     max-height: 0;
     overflow: hidden;
     transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+    line-height: 25.67px;
 }
 
 .content.show {
-    height: auto;
+    height: 249px;
     max-height: 9999px;
     transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+    padding: 20px;
 }
 
 span {

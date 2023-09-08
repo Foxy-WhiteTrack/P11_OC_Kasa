@@ -1,6 +1,7 @@
 import "./Slideshow.css";
 import React, { useState } from "react";
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { ChevronLeft } from "../Icons/ChevronLeft";
+import { ChevronRight } from "../Icons/ChevronRight";
 
 export default function Slideshow({ images }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -17,19 +18,32 @@ export default function Slideshow({ images }) {
     );
   };
 
+  // Vérifiez si vous avez plus d'une image
+  const shouldShowControls = images.length > 1;
+
   return (
     <div className="slideshow">
       <div className="image-container">
-        <img src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />
+        <img
+          src={images[currentImageIndex]}
+          alt={`Image ${currentImageIndex + 1}`}
+        />
+        {shouldShowControls && (
+          <div className="nbr">
+            {currentImageIndex + 1}/{images.length}
+          </div>
+        )}
       </div>
-      <div className="arrows">
-        <div className="arrow left" onClick={goToPreviousImage}>
-          <FaChevronLeft />
+      {shouldShowControls && (
+        <div className="arrows">
+          <div className="arrow left" onClick={goToPreviousImage}>
+            <ChevronLeft />
+          </div>
+          <div className="arrow right" onClick={goToNextImage}>
+            <ChevronRight />
+          </div>
         </div>
-        <div className="arrow right" onClick={goToNextImage}>
-          <FaChevronRight />
-        </div>
-      </div>
+      )}
     </div>
   );
-};
+}

@@ -7,7 +7,8 @@ import Tag from '../../components/Tag/Tag';
 import Collapse from '../../components/Collapse/Collapse';
 import './HousingSheet.css';
 
-import { FaStar, FaRegStar } from 'react-icons/fa';
+import { StarActive } from "../../components/Icons/StarActive";
+import { StarInactive } from "../../components/Icons/StarInactive";
 
 
 
@@ -28,7 +29,7 @@ export default function HousingSheet() {
   const generateStars = (rating) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
-      const StarIcon = i <= rating ? FaStar : FaRegStar;
+      const StarIcon = i <= rating ? StarActive : StarInactive;
       const starColor = i <= rating ? '#FF6060' : '#E3E3E3';
       stars.push(<StarIcon key={i} style={{ color: starColor }} />);
     }

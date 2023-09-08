@@ -1,6 +1,7 @@
 import "./Collapse.css";
 import React, { useState } from "react";
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { ChevronUp } from "../Icons/ChevronUp";
+import { ChevronDown } from "../Icons/ChevronDown";
 
 
 export default function Collapse({ items, customClass }) {
@@ -21,7 +22,7 @@ export default function Collapse({ items, customClass }) {
           <div className="item" key={i}>
             <div className="title" onClick={() => toggle(i)}>
               <h2>{item.title}</h2>
-              <span className="chevron" >{openItems.includes(i) ? <FaChevronUp /> : <FaChevronDown />}</span>
+              <span className="chevron" >{openItems.includes(i) ? <ChevronUp /> : <ChevronDown />}</span>
             </div>
             <div className={openItems.includes(i) ? "content show" : "content"}>
               {item.paragraphe}

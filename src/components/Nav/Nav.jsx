@@ -10,7 +10,7 @@ export default function Nav() {
         <img src={logo} alt="Logo" />
       </NavLink>
       <nav className="nav">
-        <NavLink exact to="/" className="link" activeclassname="active">Accueil</NavLink>
+        <NavLink to="/" className="link" activeclassname="active">Accueil</NavLink>
         <NavLink to="/about" className="link" activeclassname="active">A Propos</NavLink>
       </nav>
     </div>

@@ -85,8 +85,8 @@ export default function HousingSheet() {
             items={[
               {
                 title: "Équipements",
-                paragraphe: housing.equipments.map((equipments) => (
-                  <p>{equipments}</p>
+                paragraphe: housing.equipments.map((equipments, index) => (
+                  <p key={index}>{equipments}</p>
                 ))
               },
             ]}

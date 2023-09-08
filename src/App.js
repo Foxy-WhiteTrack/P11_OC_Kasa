@@ -14,7 +14,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="housing/:id" element={<HousingSheet />} />
         <Route path="about" element={<About />} />
-        <Route path="*" element={<Error404 />} />
+        <Route path="/*" element={<Error404 />} />
       </Route>
     </Routes>
   );

@@ -1,5 +1,5 @@
-import React from 'react';
-import { useParams, useNavigate, redirect } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import jsonData from '../../datas/logements.json';
 
 import Slideshow from '../../components/Slideshow/Slideshow';
@@ -7,11 +7,6 @@ import Tag from '../../components/Tag/Tag';
 import Collapse from '../../components/Collapse/Collapse';
 import './HousingSheet.css';
 import Rating from '../../components/Rating/Rating';
-import Error from '../Error404/Error404';
-
-
-
-
 
 export default function HousingSheet() {
   const { id } = useParams();
@@ -19,13 +14,18 @@ export default function HousingSheet() {
 
   const housing = jsonData.find(item => item.id === id);
 
+  useEffect(() => {
+    if (!housing) {
+      navigate('/error404');
+    }
+  }, [housing, navigate]);
+
   if (!housing) {
-    return (<Error />);
+    return null;
   }
 
   const hostName = housing.host.name;
   const hostAvatar = housing.host.picture;
-
 
   return (
     <div className="housing-sheet">
@@ -93,16 +93,6 @@ export default function HousingSheet() {
           />
         </div>
       </div>
-
-
-
-
-
-
-
-
-
-
     </div>
   );
 }

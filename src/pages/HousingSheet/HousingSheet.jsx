@@ -1,40 +1,31 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate, redirect } from 'react-router-dom';
 import jsonData from '../../datas/logements.json';
 
 import Slideshow from '../../components/Slideshow/Slideshow';
 import Tag from '../../components/Tag/Tag';
 import Collapse from '../../components/Collapse/Collapse';
 import './HousingSheet.css';
+import Rating from '../../components/Rating/Rating';
+import Error from '../Error404/Error404';
 
-import { StarActive } from "../../components/Icons/StarActive";
-import { StarInactive } from "../../components/Icons/StarInactive";
+
 
 
 
 export default function HousingSheet() {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const housing = jsonData.find(item => item.id === id);
 
   if (!housing) {
-    return <p>Logement introuvable</p>;
+    return (<Error />);
   }
 
   const hostName = housing.host.name;
   const hostAvatar = housing.host.picture;
 
-  const rating = housing.rating;
-
-  const generateStars = (rating) => {
-    const stars = [];
-    for (let i = 1; i <= 5; i++) {
-      const StarIcon = i <= rating ? StarActive : StarInactive;
-      const starColor = i <= rating ? '#FF6060' : '#E3E3E3';
-      stars.push(<StarIcon key={i} style={{ color: starColor }} />);
-    }
-    return stars;
-  };
 
   return (
     <div className="housing-sheet">
@@ -70,7 +61,7 @@ export default function HousingSheet() {
           <div className='header-down-left'>
             {/* Rating */}
             <div className="rating">
-              {generateStars(rating)}
+              <Rating value={housing.rating} max={5} />
             </div>
           </div>
         </div>

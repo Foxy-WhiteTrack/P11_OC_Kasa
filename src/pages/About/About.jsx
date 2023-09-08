@@ -7,7 +7,7 @@ import "./About.css";
 export default function About() {
   const text = [
     {
-      title: "Fiabilite",
+      title: "Fiabilité",
       paragraphe:
         "Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.",
     },
@@ -22,7 +22,7 @@ export default function About() {
         "Nos équipes se tiennent à votre disposition pour vous fournir une expérience parfaite. N'hésitez pas à nous contacter si vous avez la moindre question.",
     },
     {
-      title: "Securite",
+      title: "Sécurite",
       paragraphe:
         "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.",
     },
@@ -31,7 +31,9 @@ export default function About() {
   return (
     <>
       <Banner imageUrl={bannerImage} slogan="" />
-      <Collapse customClass="about-collapse" items={text} />
+      {text.map((section, index) => (
+        <Collapse key={index} customClass="about-collapse" items={[section]} />
+      ))}
     </>
   );
 }

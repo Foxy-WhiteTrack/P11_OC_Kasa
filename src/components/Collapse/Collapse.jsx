@@ -5,26 +5,28 @@ import { ChevronDown } from "../Icons/ChevronDown";
 
 
 export default function Collapse({ items, customClass }) {
-  const [openItems, setOpenItems] = useState([]);
+  const [isOpen, setIsOpen] = useState([]);
 
-  const toggle = (i) => {
-    if (openItems.includes(i)) {
-      setOpenItems(openItems.filter(itemIndex => itemIndex !== i));
-    } else {
-      setOpenItems([...openItems, i]);
-    }
+  const toggleCollapse = (index) => {
+    setIsOpen((prevOpenState) => {
+      const newOpenState = [...prevOpenState];
+      newOpenState[index] = !newOpenState[index];
+      return newOpenState;
+    });
   };
 
   return (
     <div className={`wrapper ${customClass}`}>
       <div className="accordion">
-        {items.map((item, i) => (
-          <div className="item" key={i}>
-            <div className="title" onClick={() => toggle(i)}>
+        {items.map((item, index) => (
+          <div className="item" key={index}>
+            <div className="title" onClick={() => toggleCollapse(index)}>
               <h2>{item.title}</h2>
-              <span className="chevron" >{openItems.includes(i) ? <ChevronUp /> : <ChevronDown />}</span>
+              <span className="chevron">
+                {isOpen[index] ? <ChevronUp /> : <ChevronDown />}
+              </span>
             </div>
-            <div className={openItems.includes(i) ? "content show" : "content"}>
+            <div className={isOpen[index] ? "content show" : "content"}>
               {item.paragraphe}
             </div>
           </div>

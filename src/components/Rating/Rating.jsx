@@ -1,4 +1,5 @@
 import React from 'react';
+import './Rating.css';
 import StarActive from '../Icons/StarActive';
 import StarInactive from '../Icons/StarInactive';
 
@@ -13,7 +14,7 @@ const Rating = ({ value, max }) => {
     }
 
     return (
-        <div className="rating">
+        <div className="rating-items">
             {stars}
         </div>
     );

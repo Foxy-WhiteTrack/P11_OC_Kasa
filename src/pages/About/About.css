@@ -1,14 +1,13 @@
-.wrapper {
-    margin: 40px;
-}
-
 .about-collapse .content.show {
     height: fit-content;
+}
 
+.about-collapse {
+    margin: 40px 0;
 }
 
 @media only screen and (max-width: 599px) {
-    .wrapper {
-        margin: 20px;
+    .about-collapse {
+        margin: 20px 0;
     }
 }

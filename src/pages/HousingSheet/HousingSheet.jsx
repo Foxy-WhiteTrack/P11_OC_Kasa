@@ -33,38 +33,36 @@ export default function HousingSheet() {
       <Slideshow images={housing.pictures} />
       <div className='header-housing'>
 
-        <div className='header-up'>
-          <div className='header-up-left'>
-            {/* Titre */}
-            <h1 className='red'>{housing.title}</h1>
+        <div className='header-left'>
+          {/* Titre */}
+          <h1 className='red'>{housing.title}</h1>
 
-            {/* Emplacement */}
-            <p className='red'>{housing.location}</p>
+          {/* Emplacement */}
+          <p className='red'>{housing.location}</p>
+
+          {/* Tag */}
+          <div className="tags">
+            {housing.tags.map((tags, index) => (
+              <Tag key={index} text={tags} />
+            ))}
           </div>
-          <div className='header-up-right'>
+        </div>
+        <div className='header-right'>
+          <div className='header-right-up'>
             {/* Propriétaire */}
             <div className='host'>
               <h2 className='red'>{hostName}</h2>
               <img src={hostAvatar} alt={`Avatar de ${hostName}`} />
             </div>
           </div>
-        </div>
-        <div className='header-down'>
-          <div className='header-down-right'>
-            {/* Tag */}
-            <div className="tags">
-              {housing.tags.map((tags, index) => (
-                <Tag key={index} text={tags} />
-              ))}
-            </div>
-          </div>
-          <div className='header-down-left'>
+          <div className='header-right-down'>
             {/* Rating */}
             <div className="rating">
               <Rating value={housing.rating} max={5} />
             </div>
           </div>
         </div>
+
       </div>
       <div className='body-housing'>
         {/* Description */}

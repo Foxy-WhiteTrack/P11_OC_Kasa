@@ -1,0 +1,6 @@
+@media only screen and (max-width: 599px) {
+    .rating-items svg {
+        width: 22px;
+        height: 22px;
+    }
+}

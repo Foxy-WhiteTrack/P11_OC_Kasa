@@ -12,3 +12,11 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+@media only screen and (max-width: 599px) {
+    .tag {
+        width: calc(415 / 1440 * 100vw);
+        padding: 5px 10px 5px 10px;
+        max-width: 360px;
+    }
+}

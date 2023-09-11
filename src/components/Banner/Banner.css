@@ -41,3 +41,28 @@
   text-align: center;
   font-size: 3vw;
 }
+
+@media only screen and (max-width: 599px) {
+  .banner-container {
+    margin: 20px;
+    min-height: 111px;
+  }
+
+  .slogan {
+    max-width: 217px;
+    text-align: left;
+    max-height: 38px;
+    width: 100%;
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    transform: translate(-50%, -25%);
+    color: white;
+    padding: 10px 0px;
+    font-size: 6vw;
+  }
+
+  .banner-image {
+    border-radius: 10px;
+  }
+}

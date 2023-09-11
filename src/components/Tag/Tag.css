@@ -3,7 +3,12 @@
     font-weight: bold;
     background-color: #FF6060;
     border-radius: 20px;
-    width: calc(115 / 1440 * 100vw);
+    width: calc(315 / 1440 * 100vw);
     padding: 5px 10px 5px 10px;
     text-align: center;
+    margin-right: 4px;
+    max-width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

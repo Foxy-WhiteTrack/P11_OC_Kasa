@@ -5,7 +5,7 @@ import { ChevronDown } from "../Icons/ChevronDown";
 
 
 export default function Collapse({ items, customClass }) {
-  const [isOpen, setIsOpen] = useState([]);
+  const [isOpen, setIsOpen] = useState([false]);
 
   const toggleCollapse = (index) => {
     setIsOpen((prevOpenState) => {

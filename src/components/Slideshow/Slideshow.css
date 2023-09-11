@@ -3,7 +3,6 @@
     padding-bottom: calc(415 / 1440 * 100vw);
     /* overflow: hidden; */
     width: 100%;
-
 }
 
 .image-container {
@@ -52,4 +51,31 @@
     bottom: 8px;
     width: 100%;
     text-align: center;
+}
+
+@media only screen and (max-width: 599px) {
+    .slideshow {
+        padding-bottom: calc(815 / 1440 * 100vw);
+        min-height: 255px;
+    }
+
+    .slideshow img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 25px;
+    }
+
+    .nbr {
+        bottom: 0;
+    }
+
+    .arrows {
+        gap: 65%;
+    }
+
+    .arrow svg {
+        width: calc(96px/2);
+        height: calc(120/2);
+    }
 }

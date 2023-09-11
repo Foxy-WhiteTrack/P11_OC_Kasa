@@ -25,3 +25,17 @@
     display: flex;
     flex-direction: column;
 }
+
+@media only screen and (max-width: 599px) {
+    .error-content h1 {
+        font-size: 96px;
+        margin-top: 30%;
+    }
+
+    .error-content p {
+        font-size: 18px;
+        max-width: 260px;
+        text-align: center;
+        margin: 10px auto 30% auto;
+    }
+}

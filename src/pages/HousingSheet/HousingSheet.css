@@ -41,8 +41,6 @@
     margin: 0;
 }
 
-
-
 .body-housing {
     display: flex;
     justify-content: space-between;
@@ -74,4 +72,15 @@
 .housing-collapse .content.show {
     height: 249px;
     color: #FF6060;
+}
+
+@media only screen and (max-width: 599px) {
+    .housing-sheet {
+        margin: 20px;
+    }
+
+    .header-up {
+        display: flex;
+        flex-direction: column;
+    }
 }

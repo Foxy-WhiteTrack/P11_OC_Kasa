@@ -2,7 +2,7 @@
     color: white;
     font-weight: bold;
     background-color: #FF6060;
-    border-radius: 20px;
+    border-radius: 10px;
     width: calc(315 / 1440 * 100vw);
     padding: 5px 10px 5px 10px;
     text-align: center;
@@ -15,7 +15,7 @@
 
 @media only screen and (max-width: 599px) {
     .tag {
-        width: calc(415 / 1440 * 100vw);
+        width: auto;
         padding: 5px 10px 5px 10px;
         max-width: 360px;
     }

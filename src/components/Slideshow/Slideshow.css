@@ -75,7 +75,7 @@
     }
 
     .arrow svg {
-        width: calc(96px/2);
-        height: calc(120/2);
+        width: 38px;
+        height: 48px;
     }
 }

@@ -36,13 +36,13 @@
     overflow: hidden;
     transition: all 0.5s cubic-bezier(1, 0, 1, 0);
     line-height: 25.67px;
+    color: #FF6060;
 }
 
 .content.show {
     max-height: 9999px;
     transition: all 0.5s cubic-bezier(1, 0, 1, 0);
     padding: 20px;
-    color: #FF6060;
 }
 
 span {
@@ -66,5 +66,9 @@ span {
         gap: 25%;
 
 
+    }
+
+    .wrapper {
+        margin: 40px 10px;
     }
 }

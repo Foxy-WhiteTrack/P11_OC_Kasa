@@ -61,7 +61,9 @@ span {
     }
 
     .title {
-        gap: 65%;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 25%;
 
 
     }

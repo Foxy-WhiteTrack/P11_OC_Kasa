@@ -2,11 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 40px;
+    margin: 40px 0px;
 }
 
 .accordion {
-    width: 71.25%;
+    width: 100%;
 }
 
 .item {
@@ -17,18 +17,30 @@
     border-radius: 10px;
 }
 
-.title {
+.housing-collapse .title {
     color: white;
     background-color: #FF6060;
     width: 100%;
     height: 40px;
     display: flex;
     justify-content: space-evenly;
-    gap: 70%;
+    gap: 55%;
     align-items: center;
     border-radius: 10px;
     padding: 0 10px;
+}
 
+.about-collapse .title {
+    color: white;
+    background-color: #FF6060;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 80%;
+    align-items: center;
+    border-radius: 10px;
+    padding: 0 10px;
 }
 
 .content {
@@ -60,12 +72,16 @@ span {
         width: 100%;
     }
 
-    .title {
+    .housing-collapse .title {
         display: flex;
         justify-content: space-evenly;
         gap: 25%;
+    }
 
-
+    .about-collapse .title {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 60%;
     }
 
     .wrapper {

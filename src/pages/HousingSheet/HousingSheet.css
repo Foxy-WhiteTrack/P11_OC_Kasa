@@ -45,6 +45,7 @@
     width: calc(64/1440*100vw);
     height: calc(64/1440*100vw);
     border-radius: 50%;
+    padding: 10px;
 }
 
 .rating {
